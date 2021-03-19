@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/Apple.js"></script>
+    <script src="js/Human.js"></script>
+</head>
+<body>
+<button onclick="adamEat()">Adam eat</button>
+<button onclick="evaEat()">Eva eat</button>
+<button onclick="getWeightApple()">Check weight apple</button>
+<div>
+    Can nang Adam: <strong id="adam-weight"></strong>
+</div>
+<div>
+    Can nang Eva: <strong id="eva-weight"></strong>
+</div>
+<div>
+    Can nang Apple: <strong id="apple-weight"></strong>
+
+</div>
+<script>
+    let apple = new Apple(10);
+    let adam = new Human('adam', 'Male', 20);
+    let eva = new Human('eva', 'Woman', 15);
+
+    function adamEat() {
+        adam.eat(apple);
+        init();
+    }
+
+    function evaEat() {
+        eva.eat(apple);
+        init();
+    }
+
+    function getWeightApple(){
+        adam.checkApple(apple);
+    }
+
+    function init() {
+        document.getElementById('adam-weight').innerHTML = adam.getWeight();
+        document.getElementById('eva-weight').innerHTML = eva.getWeight();
+        document.getElementById('apple-weight').innerHTML = apple.getWeight();
+    }
+
+    init();
+
+
+</script>
+</body>
+</html>
